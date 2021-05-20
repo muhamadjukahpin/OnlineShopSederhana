@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 20 Bulan Mei 2021 pada 08.22
+-- Waktu pembuatan: 20 Bulan Mei 2021 pada 15.41
 -- Versi server: 10.4.14-MariaDB
 -- Versi PHP: 7.4.9
 
@@ -86,6 +86,10 @@ CREATE TABLE `user_address` (
   `id` int(11) NOT NULL,
   `email` varchar(256) NOT NULL,
   `name` varchar(256) NOT NULL,
+  `id_province` int(11) NOT NULL,
+  `province_name` varchar(255) NOT NULL,
+  `id_city` int(11) NOT NULL,
+  `city_name` varchar(255) NOT NULL,
   `address` varchar(1000) NOT NULL,
   `no_hp` varchar(20) NOT NULL,
   `label` varchar(256) NOT NULL,
@@ -96,9 +100,9 @@ CREATE TABLE `user_address` (
 -- Dumping data untuk tabel `user_address`
 --
 
-INSERT INTO `user_address` (`id`, `email`, `name`, `address`, `no_hp`, `label`, `description`) VALUES
-(2, 'muhammadjukahpin@gmail.com', 'Muhammad Jukahpin', 'Jln.Raya PLP curug Kp.Candu No.81 RT.002 RW.007 Kel.Curug Kulon Kec.Curug Kab.Tangerang Prov.Banten', '089601846870', 'Home', 'First Address'),
-(4, 'apaapakah798@gmail.com', 'penghuni goa', 'Jln.Raya PLP curug Kp.Curug No.81 Kel.Curug Kulon Kec.Curug Kab.Tangerang Prov.Banten', '089601846870', 'Home', 'First Address');
+INSERT INTO `user_address` (`id`, `email`, `name`, `id_province`, `province_name`, `id_city`, `city_name`, `address`, `no_hp`, `label`, `description`) VALUES
+(2, 'muhammadjukahpin@gmail.com', 'Muhammad Jukahpin', 3, 'banten', 455, 'kabupaten tangerang', 'Jln.Raya PLP curug Kp.Candu No.81 RT.002 RW.007 Kel.Curug Kulon Kec.Curug Kab.Tangerang Prov.Banten', '089601846870', 'Home', 'First Address'),
+(4, 'apaapakah798@gmail.com', 'penghuni goa', 0, '', 0, '', 'Jln.Raya PLP curug Kp.Curug No.81 Kel.Curug Kulon Kec.Curug Kab.Tangerang Prov.Banten', '089601846870', 'Home', 'First Address');
 
 -- --------------------------------------------------------
 
@@ -154,9 +158,14 @@ CREATE TABLE `user_shop` (
   `email` varchar(256) NOT NULL,
   `name` varchar(256) NOT NULL,
   `no_hp` varchar(20) NOT NULL,
+  `id_province` int(11) NOT NULL,
+  `id_city` int(11) NOT NULL,
+  `province` varchar(255) NOT NULL,
+  `city` varchar(255) NOT NULL,
   `image` varchar(256) NOT NULL,
   `category` varchar(256) NOT NULL,
   `name_item` varchar(256) NOT NULL,
+  `weight_item` int(11) NOT NULL,
   `price` int(11) NOT NULL,
   `description` longtext NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -165,14 +174,15 @@ CREATE TABLE `user_shop` (
 -- Dumping data untuk tabel `user_shop`
 --
 
-INSERT INTO `user_shop` (`id`, `email`, `name`, `no_hp`, `image`, `category`, `name_item`, `price`, `description`) VALUES
-(5, 'apaapakah798@gmail.com', 'penghuni goa', '6289601846870', 'IMG_20191118_143737.jpg', 'clothing', 'Kemeja', 150000, 'Bahannya sangat bagus dan sangat berkualitas dan awet'),
-(6, 'apaapakah798@gmail.com', 'penghuni goa', '6289601846870', 'IMG_20191118_143805.jpg', 'clothing', 'Kemeja', 140000, 'Bahannya sangat bagus dan sangat berkualitas dan awet'),
-(7, 'apaapakah798@gmail.com', 'penghuni goa', '6289601846870', 'IMG_20191118_143836.jpg', 'clothing', 'Kemeja bagus', 120000, 'Bahannya sangat bagus dan sangat berkualitas dan awet'),
-(8, 'apaapakah798@gmail.com', 'penghuni goa', '6289601846870', 'IMG_20191118_143853.jpg', 'clothing', 'Kemeja joss', 160000, 'Bahannya sangat bagus dan sangat berkualitas dan awet'),
-(9, 'apaapakah798@gmail.com', 'penghuni goa', '6289601846870', 'IMG_20191118_143908.jpg', 'clothing', 'Kemeja rapih', 135000, 'Bahannya sangat bagus dan sangat berkualitas dan awet'),
-(10, 'apaapakah798@gmail.com', 'penghuni goa', '6289601846870', 'IMG_20191118_143931.jpg', 'clothing', 'Kemeja santai', 100000, 'Bahan terbuat dari kain katun dan sangat berkualitas dan sangat awet dan harganya terjangau'),
-(16, 'muhammadjukahpin@gmail.com', 'Muhammad Jukahpin', '6289601846870', 'jaket.jpg', 'clothing', 'Jacket Joss', 120000, 'mantepp');
+INSERT INTO `user_shop` (`id`, `email`, `name`, `no_hp`, `id_province`, `id_city`, `province`, `city`, `image`, `category`, `name_item`, `weight_item`, `price`, `description`) VALUES
+(5, 'apaapakah798@gmail.com', 'penghuni goa', '6289601846870', 0, 0, '', '', 'IMG_20191118_143737.jpg', 'clothing', 'Kemeja', 0, 150000, 'Bahannya sangat bagus dan sangat berkualitas dan awet'),
+(6, 'apaapakah798@gmail.com', 'penghuni goa', '6289601846870', 0, 0, '', '', 'IMG_20191118_143805.jpg', 'clothing', 'Kemeja', 0, 140000, 'Bahannya sangat bagus dan sangat berkualitas dan awet'),
+(7, 'apaapakah798@gmail.com', 'penghuni goa', '6289601846870', 0, 0, '', '', 'IMG_20191118_143836.jpg', 'clothing', 'Kemeja bagus', 0, 120000, 'Bahannya sangat bagus dan sangat berkualitas dan awet'),
+(8, 'apaapakah798@gmail.com', 'penghuni goa', '6289601846870', 0, 0, '', '', 'IMG_20191118_143853.jpg', 'clothing', 'Kemeja joss', 0, 160000, 'Bahannya sangat bagus dan sangat berkualitas dan awet'),
+(9, 'apaapakah798@gmail.com', 'penghuni goa', '6289601846870', 0, 0, '', '', 'IMG_20191118_143908.jpg', 'clothing', 'Kemeja rapih', 0, 135000, 'Bahannya sangat bagus dan sangat berkualitas dan awet'),
+(10, 'apaapakah798@gmail.com', 'penghuni goa', '6289601846870', 0, 0, '', '', 'IMG_20191118_143931.jpg', 'clothing', 'Kemeja santai', 0, 100000, 'Bahan terbuat dari kain katun dan sangat berkualitas dan sangat awet dan harganya terjangau'),
+(16, 'muhammadjukahpin@gmail.com', 'Muhammad Jukahpin', '6289601846870', 0, 0, '', '', 'jaket.jpg', 'clothing', 'Jacket Joss', 0, 120000, 'mantepp'),
+(18, 'muhammadjukahpin@gmail.com', 'Muhammad Jukahpin', '6212313131', 3, 455, 'Banten', 'Kabupaten Tangerang', 'kemeja11.jpg', 'Kemeja', 'Kemeja Panjang', 120, 50000, 'Kualitas Bagus');
 
 -- --------------------------------------------------------
 
@@ -322,7 +332,7 @@ ALTER TABLE `user_role`
 -- AUTO_INCREMENT untuk tabel `user_shop`
 --
 ALTER TABLE `user_shop`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT untuk tabel `user_sub_menu`
