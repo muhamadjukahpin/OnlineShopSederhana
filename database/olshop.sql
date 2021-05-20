@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.1
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 10, 2019 at 01:36 PM
--- Server version: 10.4.8-MariaDB
--- PHP Version: 7.3.10
+-- Waktu pembuatan: 20 Bulan Mei 2021 pada 08.22
+-- Versi server: 10.4.14-MariaDB
+-- Versi PHP: 7.4.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -25,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Struktur dari tabel `users`
 --
 
 CREATE TABLE `users` (
@@ -41,19 +40,21 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `users`
+-- Dumping data untuk tabel `users`
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `image`, `gender`, `role_id`, `is_active`, `date_created`) VALUES
 (1, 'Muhammad Jukahpin', 'muhammadjukahpin@gmail.com', '$2y$10$L1twrTrUp5.2HebECnd9ueuWvo/ShzvPaB9KiJiQR4Xm6fvW6zW/K', 'profile.jpg', 'male', 1, 1, 1573719604),
-(6, 'penghuni goa', 'apaapakah798@gmail.com', '$2y$10$L0oc4/qg7IwaueqIZfytZOA.AnC8mt19tcZT/f5AbO5fyJPUSUyvG', 'male.jpg', 'male', 2, 1, 1573725181),
-(7, 'Siti Wahyuni Fitri', 'yuni@gmail.com', '$2y$10$5a73Ty9nujJOc4ubpKr0l.YjnUHzld73lcsLb2T55m8dJug/MhIC.', 'yuni.jpg', 'female', 3, 1, 1573996300),
-(8, 'Qori Melinda Sandi', 'qori@gmail.com', '$2y$10$p261m03.91Km3/XVyxPG/eeU2w7y7HbQHcJHOxHkQcsj9x1xm0bzy', 'qori.jpg', 'female', 3, 1, 1574772450);
+(6, 'penghuni goa', 'apaapakah798@gmail.com', '$2y$10$L1twrTrUp5.2HebECnd9ueuWvo/ShzvPaB9KiJiQR4Xm6fvW6zW/K', 'male.jpg', 'male', 2, 1, 1573725181),
+(7, 'Siti Wahyuni Fitri', 'yuni@gmail.com', '$2y$10$L1twrTrUp5.2HebECnd9ueuWvo/ShzvPaB9KiJiQR4Xm6fvW6zW/K', 'yuni.jpg', 'female', 3, 1, 1573996300),
+(8, 'Qori Melinda Sandi', 'qori@gmail.com', '$2y$10$L1twrTrUp5.2HebECnd9ueuWvo/ShzvPaB9KiJiQR4Xm6fvW6zW/K', 'qori.jpg', 'female', 3, 1, 1574772450),
+(9, 'jbajsdbjasj', 'gdghd@rdfdf.hk', '$2y$10$mTiItfLmI0cPVFfWi2ve2uWdQ22DPuaylQ8Y5TPeO5Z04G2AoFmOe', 'male.jpg', 'male', 3, 0, 1606205141),
+(10, 'sfsfsf', 'ADASDAD@sdsf.gghg', '$2y$10$KuJAr5.mtxkfzX40IXPqJ.hOTaIwoqvxniZD2CQlsr/BlwV/s4bgK', 'male.jpg', 'male', 3, 0, 1606205292);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user_access_menu`
+-- Struktur dari tabel `user_access_menu`
 --
 
 CREATE TABLE `user_access_menu` (
@@ -63,7 +64,7 @@ CREATE TABLE `user_access_menu` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `user_access_menu`
+-- Dumping data untuk tabel `user_access_menu`
 --
 
 INSERT INTO `user_access_menu` (`id`, `role_id`, `menu_id`) VALUES
@@ -78,7 +79,7 @@ INSERT INTO `user_access_menu` (`id`, `role_id`, `menu_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user_address`
+-- Struktur dari tabel `user_address`
 --
 
 CREATE TABLE `user_address` (
@@ -92,7 +93,7 @@ CREATE TABLE `user_address` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `user_address`
+-- Dumping data untuk tabel `user_address`
 --
 
 INSERT INTO `user_address` (`id`, `email`, `name`, `address`, `no_hp`, `label`, `description`) VALUES
@@ -102,7 +103,7 @@ INSERT INTO `user_address` (`id`, `email`, `name`, `address`, `no_hp`, `label`, 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user_menu`
+-- Struktur dari tabel `user_menu`
 --
 
 CREATE TABLE `user_menu` (
@@ -112,7 +113,7 @@ CREATE TABLE `user_menu` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `user_menu`
+-- Dumping data untuk tabel `user_menu`
 --
 
 INSERT INTO `user_menu` (`id`, `menu_id`, `menu`) VALUES
@@ -124,7 +125,7 @@ INSERT INTO `user_menu` (`id`, `menu_id`, `menu`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user_role`
+-- Struktur dari tabel `user_role`
 --
 
 CREATE TABLE `user_role` (
@@ -134,7 +135,7 @@ CREATE TABLE `user_role` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `user_role`
+-- Dumping data untuk tabel `user_role`
 --
 
 INSERT INTO `user_role` (`id`, `role_id`, `role`) VALUES
@@ -145,7 +146,7 @@ INSERT INTO `user_role` (`id`, `role_id`, `role`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user_shop`
+-- Struktur dari tabel `user_shop`
 --
 
 CREATE TABLE `user_shop` (
@@ -161,7 +162,7 @@ CREATE TABLE `user_shop` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `user_shop`
+-- Dumping data untuk tabel `user_shop`
 --
 
 INSERT INTO `user_shop` (`id`, `email`, `name`, `no_hp`, `image`, `category`, `name_item`, `price`, `description`) VALUES
@@ -176,7 +177,7 @@ INSERT INTO `user_shop` (`id`, `email`, `name`, `no_hp`, `image`, `category`, `n
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user_sub_menu`
+-- Struktur dari tabel `user_sub_menu`
 --
 
 CREATE TABLE `user_sub_menu` (
@@ -189,7 +190,7 @@ CREATE TABLE `user_sub_menu` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `user_sub_menu`
+-- Dumping data untuk tabel `user_sub_menu`
 --
 
 INSERT INTO `user_sub_menu` (`id`, `menu_id`, `title`, `url`, `icon`, `is_active`) VALUES
@@ -208,7 +209,7 @@ INSERT INTO `user_sub_menu` (`id`, `menu_id`, `title`, `url`, `icon`, `is_active
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user_token`
+-- Struktur dari tabel `user_token`
 --
 
 CREATE TABLE `user_token` (
@@ -219,119 +220,121 @@ CREATE TABLE `user_token` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `user_token`
+-- Dumping data untuk tabel `user_token`
 --
 
 INSERT INTO `user_token` (`id`, `email`, `token`, `date_created`) VALUES
 (8, 'yuni@gmail.com', 'rITPEOiS46WyeRZDBJG4jckTEd/3nLI6g1TY3uosin0=', 1573995658),
 (9, 'dscxc@sasa.jj', 'okiyKrCWf2/nVCEKum1r8VGSK9c+IkqjTpANuxV/bI8=', 1573995802),
 (10, 'yuni@gmail.com', '5tzWyPYDtGbvIPwM8JtEf+UuHmO8Ux6EtcaPnBoy2Jk=', 1573996300),
-(11, 'qori@gmail.com', 'RxQDXhha5+lD8YkSjI43IJ6GFa72u3wY49V1FwJ0wIA=', 1574772450);
+(11, 'qori@gmail.com', 'RxQDXhha5+lD8YkSjI43IJ6GFa72u3wY49V1FwJ0wIA=', 1574772450),
+(12, 'gdghd@rdfdf.hk', 'nd5CCj7C5yYiPeNWay0vnjuKdnK2AGXZhhVZ/VmWay4=', 1606205141),
+(13, 'ADASDAD@sdsf.gghg', 'CZPeJk/gn5MYW+P7QB13mNAhVYTJEJWa7KFSSOQia3Y=', 1606205292);
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `users`
+-- Indeks untuk tabel `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `email` (`email`);
 
 --
--- Indexes for table `user_access_menu`
+-- Indeks untuk tabel `user_access_menu`
 --
 ALTER TABLE `user_access_menu`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `user_address`
+-- Indeks untuk tabel `user_address`
 --
 ALTER TABLE `user_address`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `user_menu`
+-- Indeks untuk tabel `user_menu`
 --
 ALTER TABLE `user_menu`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `user_role`
+-- Indeks untuk tabel `user_role`
 --
 ALTER TABLE `user_role`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `user_shop`
+-- Indeks untuk tabel `user_shop`
 --
 ALTER TABLE `user_shop`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `user_sub_menu`
+-- Indeks untuk tabel `user_sub_menu`
 --
 ALTER TABLE `user_sub_menu`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `user_token`
+-- Indeks untuk tabel `user_token`
 --
 ALTER TABLE `user_token`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `users`
+-- AUTO_INCREMENT untuk tabel `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT for table `user_access_menu`
+-- AUTO_INCREMENT untuk tabel `user_access_menu`
 --
 ALTER TABLE `user_access_menu`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT for table `user_address`
+-- AUTO_INCREMENT untuk tabel `user_address`
 --
 ALTER TABLE `user_address`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT for table `user_menu`
+-- AUTO_INCREMENT untuk tabel `user_menu`
 --
 ALTER TABLE `user_menu`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT for table `user_role`
+-- AUTO_INCREMENT untuk tabel `user_role`
 --
 ALTER TABLE `user_role`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `user_shop`
+-- AUTO_INCREMENT untuk tabel `user_shop`
 --
 ALTER TABLE `user_shop`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
--- AUTO_INCREMENT for table `user_sub_menu`
+-- AUTO_INCREMENT untuk tabel `user_sub_menu`
 --
 ALTER TABLE `user_sub_menu`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
--- AUTO_INCREMENT for table `user_token`
+-- AUTO_INCREMENT untuk tabel `user_token`
 --
 ALTER TABLE `user_token`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
