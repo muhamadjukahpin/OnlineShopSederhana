@@ -39,8 +39,8 @@
                                 <th scope="row"><?= ++$i; ?></th>
                                 <td scope="row"><?= $a['name']; ?></td>
                                 <td scope="row"><?= $a['no_hp']; ?></td>
-                                <td scope="row"><?= $a['street_name'] . " " . $a['province'] . "," . $a['city_name'] . "," . $a['sub_district'];  ?></td>
-                                <td scope="row"><?= $a['label']; ?></td>
+                                <td scope="row"><?= $a['street_name'] . " " . $a['province_name'] . "," . $a['city_name'] . "," . $a['sub_district']; ?></td>
+                                <td scope="row"><?= $a['label']; ?></>
                                 <td scope="row"><?= $a['description']; ?></td>
                                 <td>
                                     <a href="#" class="badge badge-success m-1 showEditAddress" data-toggle="modal" data-target="#addNewAddressModal" data-id="<?= $a['id']; ?>">Edit</a>

@@ -71,6 +71,10 @@
                         </tr>
                     </thead>
                     <tbody>
+                        <?php
+                        $kurir = '';
+                        $price = [];
+                        ?>
                         <?php foreach ($ongkir as $ong) : ?>
                             <?php foreach ($ong['results'] as $o) : ?>
                                 <?php $name = $o['name']; ?>
@@ -86,9 +90,9 @@
                         <?php for ($i = 0; $i < count($service); $i++) : ?>
                             <tr>
                                 <td><?= $i + 1; ?></td>
-                                <td><?= $name; ?></td>
+                                <td><?= $kurir = $name; ?></td>
                                 <td><?= $service[$i]; ?></td>
-                                <td><?= $value[$i]; ?></td>
+                                <td><?= array_push($price, $value[$i]); ?></td>
                                 <td>
                                     <input type="radio" name="kurir" id="kurir" value="<?= $name . ' ' . $service[$i] . ' ' . $value[$i]; ?>">
                                 </td>
@@ -99,7 +103,12 @@
                         </tr>
                     </tbody>
                 </table>
-                <a href="#" class="btn btn-primary">Checkout</a>
+                <!-- <form action="<?= base_url('user/checkout'); ?>" method="POST">                    
+                </form> -->
+                <!-- <script>
+                    const radio = document.quer
+                </script> -->
+                <a href="https://api.whatsapp.com/send?phone=<?= $item['no_hp']; ?>&text=Saya ingin membeli baju <?= $item['name']; ?>, dengan kurir <?= $kurir; ?> dan harga pilihan => <?php print_r($price); ?>" class="btn btn-primary">Checkout</a>
             </div>
             </form>
         <?php endif; ?>

@@ -150,6 +150,10 @@ class User extends CI_Controller
         $data['menu'] = $this->menu->menu();
         $data['item'] = $this->user->getItemById($id);
         $data['address'] = $this->user->getAddressByDes();
+        if (empty($data['address'])) {
+            $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Please add address!</div>');
+            return redirect('user/address');
+        }
 
         $data['ongkir'] = $this->user->getApiRajaOngkirCost();
         $this->load->view('templates/header', $data);
